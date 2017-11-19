@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdlib.h>
 #include "opencv2/opencv_modules.hpp"
 #include <opencv2/core/utility.hpp>
 #include "opencv2/imgcodecs.hpp"
@@ -398,8 +399,15 @@ int main(int argc, char* argv[])
 
     Mat result, result_mask;
     blender->blend(result, result_mask);
-
+//    char recchoice, cropit = new char[result_name.length() + 1];
+//    std::strcpy(cropit, result_name.c_str());
+  //  std::strcpy(cropit, result_name);
     imwrite(result_name, result);
+    std::cout<< "Image Written as "
+		<< result_name
+		<< "You may crop it into rectangle by doing\n"
+		<< "./cropp result.jpg"
+		<< std::endl;
 
     return 0;
 }

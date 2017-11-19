@@ -215,9 +215,7 @@ while( (minXId<maxXId)&&(minYId<maxYId) )
 
 }
 
-std::cout <<  "done! : Here >" << interiorBB <<"< Ends here." << std::endl;
 //std::cout << "Vars :\n ocTop :interiorBB : " << interiorBB.x << std::endl;
-std::cout << "\nx : " << interiorBB.x << "\ny :" << interiorBB.y << "\nheit :" <<interiorBB.height << "\nwid :" << interiorBB.width << std::endl;
 cv::Mat mask2 = cv::Mat::zeros(input.rows, input.cols, CV_8UC1);
 sprintf(cmd, "convert %s -crop %dx%d+%d+%d +repage %s", argc[1], interiorBB.width, interiorBB.height, interiorBB.x, interiorBB.y, argc[1]);
 /*cv::rectangle(mask2,interiorBB, cv::Scalar(255),-1);
@@ -235,5 +233,5 @@ cv::imwrite("interiorBoundingBoxResult.png", maskedImage);
 //cv::imwrite("CroppedImg.png", cropped);*/
 
 system(cmd);
-std::cout << "Done!";
+std::cout << "Image Cropped!";
 }
