@@ -3,7 +3,7 @@
 
 *By Yash Yadav, Km Varsha Jaiswal and Anamika Singh*
 
-360° Paronama Generator is a relative images stitcher written in C++. The program takes individual images as input and generates a stitched panorama picture as output. The program supports giving outputs in 5 formats i.e. Plane, cylindrical, spherical, fisheye, and stereographic.
+360° Panorama Generator is a relative images stitcher written in C++. The program takes individual images as input and generates a stitched panorama picture as output. The program supports giving outputs in 5 formats i.e. Plane, cylindrical, spherical, fisheye, and stereographic.
 
 - The program has been developed on linux environment and has been successfully tested on the same. The instructions assume that the user is on any linux-distro or is able to apply the instructions on their respective OS of choice.
 
@@ -20,7 +20,7 @@
 
 Compile the two files :
 
-	g++ src/stitcher.cpp -o pano `pkg-config --cflags --libs opencv`
+	g++ src/stitcher.cpp -o stitcher `pkg-config --cflags --libs opencv`
 
 	g++ src/cropper.cpp -o cropp `pkg-config --cflags --libs opencv`
 
@@ -28,23 +28,23 @@ Compile the two files :
 
 Run the program like this :  
 
-	./pano [image1] [image2] [image3].......[image4]  [flags]
+	./stitcher [image1] [image2] [image3].......[image4]  [flags]
 
 Enter **y** or **n** when the program asks you to crop the images.
 
 To know about the supported flags, simply run without any arguments :  
 
-	./pano
+	./stitcher
 
 **Examples :**   
 
 To combine flowers in the images/flower folder :  
 	
-	./pano images/flower/* --output flower.jpg
+	./stitcher images/flower/* --output flower.jpg
 
 or to stitch the images in the UAV foler as a stereographic image :  
 	
-	./pano images/uav/* --warp stereographic --output UAV_stereographic.jpg
+	./stitcher images/uav/* --warp stereographic --output UAV_stereographic.jpg
 
 
 Done! Open the image with your image viewer!
