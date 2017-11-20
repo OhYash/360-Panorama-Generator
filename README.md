@@ -42,7 +42,7 @@ To combine flowers in the images/flower folder :
 	
 	./stitcher images/flower/* --output flower.jpg
 
-or to stitch the images in the UAV foler as a stereographic image :  
+or to stitch the images in the UAV folder as a stereographic image :  
 	
 	./stitcher images/uav/* --warp stereographic --output UAV_stereographic.jpg
 
