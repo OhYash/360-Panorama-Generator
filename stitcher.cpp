@@ -397,17 +397,20 @@ int main(int argc, char* argv[])
         blender->feed(img_warped_s, mask_warped, corners[img_idx]);
     }
 
+    char cropit, krop[100];
+
     Mat result, result_mask;
     blender->blend(result, result_mask);
-//    char recchoice, cropit = new char[result_name.length() + 1];
-//    std::strcpy(cropit, result_name.c_str());
-  //  std::strcpy(cropit, result_name);
     imwrite(result_name, result);
     std::cout<< "Image Written as "
 		<< result_name
-		<< "You may crop it into rectangle by doing\n"
-		<< "./cropp result.jpg"
-		<< std::endl;
+		<< "\nWould you like to crop the image into a rectange?(y|n)\n";
+    std::cin>>cropit;
+    if(cropit == 'y')
+    {
+	    sprintf(krop, "./cropp %s", result_name.c_str());
+	    system(krop);
+    }
 
     return 0;
 }

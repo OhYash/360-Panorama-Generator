@@ -143,9 +143,6 @@ std::vector<cv::Vec4i> hierarchy;
 
 cv::findContours(mask,contours,hierarchy, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE, cv::Point(0,0));
 
-std::cout << "found contours: " << contours.size() << std::endl;
-
-
 cv::Mat contourImage = cv::Mat::zeros( input.size(), CV_8UC3 );;
 
 //find contour with max elements
@@ -161,9 +158,6 @@ for(unsigned int i=0; i<contours.size(); ++i)
         id = i;
     }
 }
-
-std::cout << "chosen id: " << id << std::endl;
-std::cout << "max size: " << maxSize << std::endl;
 
 /// Draw filled contour to obtain a mask with interior parts
 cv::Mat contourMask = cv::Mat::zeros( input.size(), CV_8UC1 );
@@ -231,7 +225,16 @@ input.copyTo(maskedImage,mask2);
 cv::imshow("masked image", maskedImage);
 cv::imwrite("interiorBoundingBoxResult.png", maskedImage);
 //cv::imwrite("CroppedImg.png", cropped);*/
+cv::Mat roi(input, interiorBB);
+cv::Mat croppedImg;
+roi.copyTo(croppedImg);
 
-system(cmd);
+//cv::Rect roi(interiorBB.x, interiorBB.y, interiorBB.width, interiorBB.height);
+//cv::Mat croppedImg = cv::fullImage(cv::Rect(interiorBB));
+//cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
+cv::imwrite(argc[1], croppedImg);
+//cv::imshow("Masked Image", croppedImg);
+//cv::waitKey(0);
+//system(cmd);
 std::cout << "Image Cropped!";
 }
