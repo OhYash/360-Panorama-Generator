@@ -12,11 +12,11 @@
 
 **Installation :**
 
--- Compilation requires g++ compiler and opencv   
+-- Compilation requires g++ compiler and opencv. Open **terminal** and enter the following commands :     
 
 	sudo apt-get install build-essential
 
-        sudo apt-get install libopencv-dev
+	sudo apt-get install libopencv-dev
 
 **Compiler requirements :**
 
@@ -28,11 +28,19 @@ Compile the two files :
 
 **Run the program :**
 
-open treminal and run this command :  
+Run the program like this :  
 
-        ./pano [image1] [image2] [image3].......[image4]  [flags]
+	./pano [image1] [image2] [image3].......[image4]  [flags]
 
-Example, to combine flowers in the images/flower folder :  
+Enter **y** or **n** when the program asks you to crop the images.
+
+To know about the supported flags, simply run without any arguments :  
+
+	./pano
+
+**Examples :**   
+
+To combine flowers in the images/flower folder :  
 	
 	./pano images/flowers/* --output flower.jpg
 
@@ -40,6 +48,5 @@ or to stitch the images in the UAV foler as a stereographic image :
 	
 	./pano images/uav/* --warp stereographic --output UAV_stereographic.jpg
 
-Enter **y** or **n** when the program asks you to crop the images.
 
 Done! Open the image with your image viewer!
