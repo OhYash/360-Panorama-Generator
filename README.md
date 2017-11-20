@@ -5,16 +5,18 @@
 
 360° Panorama Generator is a relative images stitcher written in C++. The program takes individual images as input and generates a stitched panorama picture as output. The program supports giving outputs in 5 formats i.e. Plane, cylindrical, spherical, fisheye, and stereographic.
 
-- The program has been developed on linux environment and has been successfully tested on the same. The instructions assume that the user is on any linux-distro or is able to apply the instructions on their respective OS of choice.
+-- The program has been developed on linux environment and has been successfully tested on the same. The instructions assume that the user is on any linux-distro or is able to apply the instructions on their respective OS of choice.
 
-- The program has two components : Panorama Stitcher and Cropper. Stitcher joins individual images into one and Cropper crops the stitched image into a uniform rectangle.
+-- The program has two components : Panorama Stitcher and Cropper. Stitcher joins individual images into one and Cropper crops the stitched image into a uniform rectangle.
 
 
 **Installation :**
 
--- Compilation requires g++ compiler and opencv. Open **terminal**, change directory to this repository and enter the following commands :  
+-- Compilation requires **g++** compiler and **opencv**. Open **terminal**, change directory to this repository and enter the following commands :  
 
 	sh ubuntuOpenCV/opencv_latest.sh
+
+To install opencv in other linux distros follow [this git repository](https://github.com/jayrambhia/Install-OpenCV/).
 
 **Compiler requirements :**
 
