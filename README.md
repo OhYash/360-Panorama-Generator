@@ -12,19 +12,17 @@
 
 **Installation :**
 
--- Compilation requires g++ compiler and opencv. Open **terminal** and enter the following commands :     
+-- Compilation requires g++ compiler and opencv. Open **terminal**, change directory to this repository and enter the following commands :  
 
-	sudo apt-get install build-essential
-
-	sudo apt-get install libopencv-dev
+	sh ubuntuOpenCV/opencv_latest.sh
 
 **Compiler requirements :**
 
 Compile the two files :
 
-	g++ stitcher.cpp -o pano `pkg-config --cflags --libs opencv`
+	g++ src/stitcher.cpp -o pano `pkg-config --cflags --libs opencv`
 
-	g++ cropper.cpp -o cropp `pkg-config --cflags --libs opencv`
+	g++ src/cropper.cpp -o cropp `pkg-config --cflags --libs opencv`
 
 **Run the program :**
 
@@ -42,7 +40,7 @@ To know about the supported flags, simply run without any arguments :
 
 To combine flowers in the images/flower folder :  
 	
-	./pano images/flowers/* --output flower.jpg
+	./pano images/flower/* --output flower.jpg
 
 or to stitch the images in the UAV foler as a stereographic image :  
 	
