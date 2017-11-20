@@ -25,7 +25,7 @@ static void printUsage()
     cout <<
         "360° Paronama Generator.\n"
 	"      By Yash Yadav, Anamika Singh, Varsha Jaiswal\n\n"
-        "Usage : parogen img1 img2 [...imgN] [flags]\n\n"
+        "Usage : ./stitcher img1 img2 [...imgN] [flags]\n\n"
         "Flags:\n"
         "  --fast\n"
         "      Run stitching in the preview mode. Works faster than usual mode,\n"
