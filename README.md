@@ -21,7 +21,7 @@ To install opencv in other linux distros follow [this git repository](https://gi
 
 **Compiler requirements :**
 
-Compile the two files :
+Make the two files :
 
 	make
 
