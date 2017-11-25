@@ -12,19 +12,18 @@
 
 **Installation :**
 
--- Compilation requires **g++** compiler and **opencv**. Open **terminal**, change directory to this repository and enter the following commands :  
+-- Compilation requires **g++** compiler and **opencv**. Open **terminal**, in Ubuntu change directory to this repository and enter the following commands :  
 
 	sh ubuntuOpenCV/opencv_latest.sh
 
+If this doesn't work, follow [this](https://help.ubuntu.com/community/OpenCV).
 To install opencv in other linux distros follow [this git repository](https://github.com/jayrambhia/Install-OpenCV/).
 
 **Compiler requirements :**
 
 Compile the two files :
 
-	g++ src/stitcher.cpp -o stitcher `pkg-config --cflags --libs opencv`
-
-	g++ src/cropper.cpp -o cropp `pkg-config --cflags --libs opencv`
+	make
 
 **Run the program :**
 
